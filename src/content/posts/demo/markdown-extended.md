@@ -1,11 +1,11 @@
 ---
 title: Markdown Extended Features
 published: 2024-05-01
-description: 'Read more about Markdown features in Fuwari'
+description: 'Read more about Markdown features'
 image: ''
-tags: [Demo, Example, Markdown, Fuwari]
-category: 'Examples'
-draft: false 
+tags: [Markdown, Astro, Svelte]
+category: 'Astro'
+draft: true 
 ---
 
 ## GitHub repository cards
