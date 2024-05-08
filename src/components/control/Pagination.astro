@@ -49,6 +49,7 @@ const getPageUrl = (p: number) => {
   return `/${p}/`
 }
 ---
+{pages.length < 1 ? 
 
 <div class:list={[className, "flex flex-row gap-3 justify-center"]} style={style}>
     <a href={url(page.url.prev!)} aria-label={page.url.prev ? "Previous Page" : null}
@@ -81,3 +82,6 @@ const getPageUrl = (p: number) => {
         <Icon name="material-symbols:chevron-right-rounded" size={24}></Icon>
     </a>
 </div>
+:
+<p>No Posts yet!</p>
+}

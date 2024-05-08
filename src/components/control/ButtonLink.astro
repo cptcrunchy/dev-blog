@@ -1,12 +1,12 @@
 ---
 interface Props {
-  badge?: string
-  url?: string
-  name?: string
+  badge: number
+  url: string | null
+  label: string | null
 }
-const { badge, url, name } = Astro.props
+const { badge, url, label } = Astro.props
 ---
-<a href={url} aria-label={name}>
+<a href={url} aria-label={label}>
     <button
         class:list={`
             w-full
@@ -30,7 +30,7 @@ const { badge, url, name } = Astro.props
             <div class="overflow-hidden text-left whitespace-nowrap overflow-ellipsis  ">
                 <slot></slot>
             </div>
-            { badge !== undefined && badge !== null && badge !== '' &&
+            { badge !== undefined && badge !== null && Boolean(badge) &&
                 <div class="transition h-7 ml-4 min-w-[2rem] rounded-lg text-sm font-bold
                     text-[var(--btn-content)] dark:text-[var(--deep-text)]
                     bg-[oklch(0.95_0.025_var(--hue))] dark:bg-[var(--primary)]

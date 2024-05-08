@@ -1,23 +1,23 @@
 ---
-import PostCard from '@components/PostCard.astro'
+// import PostCard from '@components/PostCard.astro'
 import PostPage from '@components/PostPage.astro'
 import Pagination from '@components/control/Pagination.astro'
 import { PAGE_SIZE } from '@constants/constants'
 import { getSortedPosts } from '@utils/content-utils'
-import { getPostUrlBySlug } from '@utils/url-utils'
+// import { getPostUrlBySlug } from '@utils/url-utils'
 import MainGridLayout from '../layouts/MainGridLayout.astro'
 
 export async function getStaticPaths({ paginate }) {
   const allBlogPosts = await getSortedPosts()
   return paginate(allBlogPosts, { pageSize: PAGE_SIZE })
 }
+
 const { page } = Astro.props
 
-const len = page.data.length
-console.log(page)
+const len: number = page.data.length
 ---
 
-<MainGridLayout>
+<MainGridLayout title="Home Page">
     <PostPage page={page}></PostPage>
-    <Pagination class="mx-auto onload-animation" page={page} style=`animation-delay: calc(var(--content-delay) + ${(len)*50}ms)`></Pagination>
+		<Pagination class="mx-auto onload-animation" page={page} style=`animation-delay: calc(var(--content-delay) + ${(len)*50}ms)`></Pagination>
 </MainGridLayout>

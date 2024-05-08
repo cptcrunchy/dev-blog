@@ -28,8 +28,6 @@ let { title, banner, description } = Astro.props
 
 const isHomePage = pathsEqual(Astro.url.pathname, '/')
 
-const testPathName = Astro.url.pathname
-
 const anim = {
   old: {
     name: 'fadeIn',
@@ -78,7 +76,7 @@ const siteLang = siteConfig.lang.replace('_', '-')
 ---
 
 <!DOCTYPE html>
-<html lang={siteLang} isHome={isHomePage} pathname={testPathName} class="bg-[var(--page-bg)] transition text-[14px] md:text-[16px]">
+<html lang={siteLang} class="bg-[var(--page-bg)] transition text-[14px] md:text-[16px]">
 	<head>
 
 		<title>{pageTitle}</title>
